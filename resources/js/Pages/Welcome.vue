@@ -6,6 +6,7 @@ import Skills from '@/Components/Frontend/Skills.vue';
 import Portfolio from "@/Components/Frontend/Portfolio.vue";
 import ContactMe from '@/Components/Frontend/ContactMe.vue';
 import Education from '@/Components/Frontend/Education.vue';
+import Services from '@/Components/Frontend/Services.vue';
 
 import FrontendLayout from '@/Layouts/Frontend.vue';
 import { Head, Link } from '@inertiajs/vue3';
@@ -37,6 +38,7 @@ defineProps({
     <Portfolio :skills="skills" :projects="projects" />
     <!-- Education -->
 <Experiences />
+<Services />
     <!-- Contact -->
     <ContactMe />
      </FrontendLayout>

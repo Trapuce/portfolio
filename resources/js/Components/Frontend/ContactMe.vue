@@ -93,6 +93,8 @@ const submit = () => {
               <h4 class="font-body text-xl mb-1">Have a question?</h4>
               <P class="mb-1 text-paragraph">I am here to help you.</P>
               <p class="text-accent font-normal">Email me at dt2040760@gmail.com</p>
+              <p class="text-accent font-normal">Call me at +33 7 45 91 69 59</p>
+
             </div>
           </div>
           <div class="flex flex-col lg:flex-row gap-x-4">

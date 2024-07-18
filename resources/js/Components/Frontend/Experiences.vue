@@ -29,8 +29,8 @@
       <div class="mb-8 ml-8">
   <div class="absolute w-6 h-6 bg-light-tail-100 dark:bg-dark-navy-500 rounded-full -left-4 border-4 border-white"></div>
   <time class="mb-1 text-sm font-normal leading-none">From June 2024 to August 2024, Creteil, Paris</time>
-  <h3 class="text-lg font-semibold">AW Service - Front-end Developer Internship</h3>
-  <p class="text-base font-normal">Technologies: React, Vue.js, Angular, JavaScript, iCalendar</p>
+  <h3 class="text-lg font-semibold">AW Service - Software Developer Internship</h3>
+  <p class="text-base font-normal">Technologies: React, Vue.js, Angular, Laravel</p>
   <p class="text-base font-normal">Developed and maintained user interfaces using React, Vue.js, Angular, JavaScript, and iCalendar, in collaboration with the back-end team working on Laravel.</p>
 </div>
       <!-- Second Job -->

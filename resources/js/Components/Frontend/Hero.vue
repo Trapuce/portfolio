@@ -67,7 +67,9 @@
               transition-all
             "
           >
+          <a href="#contact" >
             Work with me
+            </a>
           </button>
           <div class="pt-12">
             <h5

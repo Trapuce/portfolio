@@ -10,7 +10,7 @@
 
           </div>
           <p class="text-paragraph opacity-80  text-[15px]">
-               &copy; 2024 made by Daouda Traore All right reserved.
+               &copy; 2024 made by Daouda Traore All rights reserved.
 
           </p>
      </div>

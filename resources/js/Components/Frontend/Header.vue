@@ -10,6 +10,7 @@ const navigations = [
     {name: "EDUCATION" , href:"#education"},
     {name: "PORTFOLIO" , href:"#portfolio"},
     {name: "EXPERIENCE" , href:"#experiences"},
+    {name: "SERVICES" , href:"#services"},
     {name: "CONTACT" , href:"#contact"},
 
 ];
@@ -41,7 +42,7 @@ onMounted(()=>{
         </svg>
     </button>
     <div class=" w-full md:block md:w-auto" id="navbar-default" :class="{hidden : showMobileMenu}">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg border border-light-tail-500 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-dark-navy-100">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg border border-light-tail-500 md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-dark-navy-100">
         <li v-for="(navigation , index) in navigations" :key="index">
           <a :href="navigation.href" class="block py-2 px-3 text-light-tail-500  rounded dark:text-dark-navy-100 hover:text-light-tail-100 dark:hover:text-white" aria-current="page">{{navigation.name}}</a>
         </li>
