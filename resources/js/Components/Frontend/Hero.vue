@@ -52,10 +52,7 @@
               lg:text-left
             "
           >
-          Master's student in Software Engineering ,I specialize in developing efficient and scalable
-      software systems, ensuring high-quality code through best practices, and
-      collaborating across teams to deliver impactful solutions. Let's build
-      the future together.
+          Let's build the future together.
           </p>
           <button
             class="

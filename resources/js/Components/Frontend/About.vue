@@ -33,8 +33,10 @@
               <P class="mb-4 text-accent">Software Engineer</P>
               <hr class="mb-8 opacity-90 dark:opacity-5" />
               <p class="mb-8">
-                I am Daouda Traore, a Master's student in Software Engineering at the University of Rennes 1, seeking an apprenticeship. I specialize in front-end development with React, Vue.js, and Angular, and have collaborated on back-end projects using Laravel. My recent work includes a mixed reality app for 3D printing visualization and a Pokédex app using Angular and SpringBoot. I am proficient in Java, JavaScript, Python, PHP, and C++, and have experience with databases like MySQL and MongoDB. Fluent in French and intermediate in English, I also enjoy video editing and design, and share my projects on YouTube.
-
+                I am Daouda Traore, a Master's student in Software Engineering at the University of Rennes 1, seeking an apprenticeship.
+                I have worked with the Software Development Life Cycle (SDLC) and agile methodologies.
+                I have expertise in Java , PHP , JavaScript,Laravel.I also have a good understanding of Python, SpringBoot, Angular, MongoDB, Vuejs, and Postgresql.
+                I am a lover of innovation and everything related to generating new knowledge. I face problems with a smile and solve them as soon as possible. I am very calculated about the time I spend and the work I do.
               </p>
             </div>
             <a href="#contact" class="btn btn-md bg-accent text-light-tail-100">
