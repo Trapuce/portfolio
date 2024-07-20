@@ -14,7 +14,7 @@ use Inertia\Inertia;
 
 Route::get('/', [WelcomeController::class , 'welcome'])->name('welcome');
 Route::post('/contact', ContactController::class)->name('contact');
-/*Route::get('/', function () {
+/*Route::get('/', fun-ction () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
