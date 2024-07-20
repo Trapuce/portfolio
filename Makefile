@@ -1,7 +1,7 @@
 .PHONY: deploy install
 
 deploy:
-	ssh o2switch 'cd trapuce.com && git fetch --all && git pull origin master && make install'
+	ssh o2switch 'cd trapuce.com && git fetch --all && git pull origin main && make install'
 
 install: vendor/autoload.php .env public/storage
 	php artisan cache:clear
