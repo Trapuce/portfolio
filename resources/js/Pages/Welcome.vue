@@ -15,7 +15,8 @@ import Experiences from '@/Components/Frontend/Experiences.vue';
 
 defineProps({
     skills:Object,
-    projects:Object
+    projects:Object,
+    categories:Object
 })
 </script>
 
@@ -35,7 +36,7 @@ defineProps({
     <Education />
 
     <!-- projects -->
-    <Portfolio :skills="skills" :projects="projects" />
+    <Portfolio :categories="categories" :projects="projects" />
     <!-- Education -->
 <Experiences />
 <Services />

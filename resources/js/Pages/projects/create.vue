@@ -9,13 +9,15 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 defineProps({
-    skills:Array
+    skills:Array,
+    categories: Array
 });
 
 const form = useForm({
     name: '',
     image: null,
      skill_id:  '',
+     category_id: '',
     project_url: '',
 });
 
@@ -40,6 +42,13 @@ const submit = () => {
 
                         <select v-model="form.skill_id" id="skill.id" name="skill.id" class="mt-1 block w-full pl-3 pr-10 py-2  text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  rounded-md" >
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">{{skill.name}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <InputLabel for="category_id" value="Category" />
+
+                        <select v-model="form.category_id" id="category.id" name="category.id" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
                         </select>
                     </div>
             <div>

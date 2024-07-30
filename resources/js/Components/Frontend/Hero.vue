@@ -37,6 +37,7 @@
               lg:text-7xl lg:leading-[1.2]
               font-bold
               md:tracking-[-2px]
+              animate-fadeInUp
             "
           >
           I Build & Design <br />
@@ -214,3 +215,21 @@
     </div>
   </section>
 </template>
+<style scoped>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}
+
+
+</style>

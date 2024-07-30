@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Http\Resources\ProjectResource;
-
+use Illuminate\Support\Facades\Log;
+use App\Http\Resources\CategoryResource;
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -15,7 +17,8 @@ class ProjectController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {    $projects = ProjectResource::collection(Project::with('skill')->get());
+    {    $projects = ProjectResource::collection(Project::with('skill', 'category')->get());
+       // $categories = CategoryResource::collection(Project::with('category')->get());
         return Inertia::render('projects/index',compact('projects'));
     }
 
@@ -25,7 +28,9 @@ class ProjectController extends Controller
     public function create()
     {
         $skills = Skill::all();
-        return Inertia::render('projects/create' , compact('skills'));
+        $categories = Category::all();
+        return Inertia::render('projects/create', compact('skills', 'categories'));
+
     }
 
     /**
@@ -36,13 +41,16 @@ class ProjectController extends Controller
         $request->validate([
             'image'=>['required' , 'image'],
             'name'=>['required' , 'min:3'],
-            'skill_id'=>['required' ]
+            'skill_id'=>['required' ],
+            'category_id'=>['required' ]
+
            ]);
 
            if($request->hasFile('image')){
              $image = $request->file('image')->store("projects");
              Project::create([
                 'skill_id'=>$request->skill_id,
+                'category_id'=>$request->category_id,
                 'name'=>$request->name,
                 'image'=>$image,
                 'project_url'=>$request->project_url,
@@ -68,8 +76,12 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+
+
         $skills = Skill::all();
-        return Inertia::render('projects/edit', compact('project','skills'));
+        $categories = Category::all();
+        return Inertia::render('projects/edit', compact('project', 'skills', 'categories'));
+
 
     }
 
@@ -78,10 +90,14 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        Log::info('Request Data:', $request->all());
+        Log::info('Project Data Before Update:', $project->toArray());
+
         $image = $project->image;
         $request->validate([
             'name' =>['required', 'min:3'],
             'skill_id'=>['required'],
+            'category_id'=>['required'],
         ]);
         if($request->hasFile('image')){
             Storage::delete($project->image);
@@ -90,6 +106,7 @@ class ProjectController extends Controller
         $project->update([
             'name' =>$request->name,
             'skill_id'=>$request->skill_id,
+            'category_id'=>$request->category_id,
             'project_url'=>$request->project_url,
             'image'=>$image
         ]);

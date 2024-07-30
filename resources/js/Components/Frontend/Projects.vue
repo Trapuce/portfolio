@@ -2,22 +2,21 @@
 import Project from "./Project.vue";
 import { ref } from "vue";
 const props = defineProps({
-  skills: Object,
-  projects: Object,
+    categories: Object,
+      projects: Object,
 });
 
 const filteredProjects = ref(props.projects.data);
-const selectedSkill = ref("all");
-
+const selectedCategory = ref("all");
 const filterProjects = (id) => {
   if (id === "all") {
     filteredProjects.value = props.projects.data;
-    selectedSkill.value = id;
+    selectedCategory.value = id;
   } else {
     filteredProjects.value = props.projects.data.filter((project) => {
-      return project.skill.id === id;
+        return project.category.id === id;
     });
-    selectedSkill.value = id;
+    selectedCategory.value = id;
   }
 };
 </script>
@@ -38,7 +37,7 @@ const filterProjects = (id) => {
               rounded-md
             "
             :class="[
-              selectedSkill === 'all'
+              selectedCategory === 'all'
                 ? 'bg-accent'
                 : 'bg-light-tail-500 dark:bg-dark-navy-100',
             ]"
@@ -48,11 +47,11 @@ const filterProjects = (id) => {
         </li>
         <li
           class="cursor-pointer capitalize m-4"
-          v-for="projectSkill in skills.data"
-          :key="projectSkill.id"
+          v-for="projectCategory in categories.data"
+          :key="projectCategory.id"
         >
           <button
-            @click="filterProjects(projectSkill.id)"
+            @click="filterProjects(projectCategory.id)"
             class="
               flex
               text-center
@@ -63,12 +62,12 @@ const filterProjects = (id) => {
               rounded-md
             "
             :class="[
-              selectedSkill == projectSkill.id
+              selectedCategory == projectCategory.id
                 ? 'bg-accent'
                 : 'bg-light-tail-500 dark:bg-dark-navy-100',
             ]"
           >
-            {{ projectSkill.name }}
+            {{ projectCategory.name }}
           </button>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 <script setup>
 import Projects from "./Projects.vue";
 defineProps({
-  skills: Object,
+  categories: Object,
   projects: Object,
 });
 </script>
@@ -29,6 +29,6 @@ defineProps({
         </p>
       </div>
     </div>
-    <Projects :skills="skills" :projects="projects" />
+    <Projects :categories="categories" :projects="projects" />
   </section>
 </template>

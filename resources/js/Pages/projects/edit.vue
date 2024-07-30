@@ -10,6 +10,7 @@ import { Head, useForm,router } from '@inertiajs/vue3';
 
 const props = defineProps({
     skills:Array,
+    categories: Array,
     project:Object
 });
 
@@ -17,6 +18,7 @@ const form = useForm({
     name: props.project?.name,
     image: null,
      skill_id:  props.project?.skill_id,
+     category_id: props.project?.category_id,
     project_url: props.project?.project_url,
 });
 
@@ -26,6 +28,7 @@ const submit = () => {
     name:form.name,
     image: form.image,
     skill_id:form.skill_id,
+    category_id: form.category_id,
     project_url:form.project_url,
    });
 };
@@ -47,6 +50,13 @@ const submit = () => {
 
                         <select v-model="form.skill_id" id="skill.id" name="skill.id" class="mt-1 block w-full pl-3 pr-10 py-2  text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  rounded-md" >
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">{{skill.name}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <InputLabel for="category_id" value="Category" />
+
+                        <select v-model="form.category_id" id="category.id" name="category.id" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
                         </select>
                     </div>
             <div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\CategoryController;
+
 use App\Http\Controllers\WelcomeController;
 
 use Illuminate\Foundation\Application;
@@ -14,14 +16,6 @@ use Inertia\Inertia;
 
 Route::get('/', [WelcomeController::class , 'welcome'])->name('welcome');
 Route::post('/contact', ContactController::class)->name('contact');
-/*Route::get('/', fun-ction () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});*/
 
 
 Route::middleware(['auth' , 'verified'])->group(function(){
@@ -30,6 +24,9 @@ Route::middleware(['auth' , 'verified'])->group(function(){
     })->name('dashboard');
     Route::resource('/skills', SkillController::class);
     Route::resource('/projects', ProjectController::class);
+    Route::resource('/categories', CategoryController::class);
+
+
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
